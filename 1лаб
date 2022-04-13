@@ -1,0 +1,49 @@
+// 1 задача.cpp : Этот файл содержит функцию "main". Здесь начинается и заканчивается выполнение программы.
+//
+
+#include <iostream>
+#include <conio.h>
+#include <String>
+#include <locale.h>
+using namespace std;
+
+double gazCost = 7.95;
+
+int main()
+{
+	setlocale(LC_ALL, "Russian");
+	cout << "Hi! Our programm count how much cost bill\n\n\n";
+	cout << "Naftogaz\n";
+	cout << "Ведите текущие показатели счетчика:" << "\n";
+	double gasPresent;
+	cin >> gasPresent;
+	cout << "Ведите предыдущие показатели счетчика:" << "\n";
+	double gasPrevious;
+	cin >> gasPrevious;
+
+	if (gasPresent < gasPrevious) {
+		cout << "Вы ввели неверные данные" << "\n";
+		main();
+	}
+	else
+		cout << "Стоимость газа: " << ((gasPresent - gasPrevious) * gazCost) << " грн" "\n";
+
+	cout << "Обленерго" << "\n";
+	cout << "Ведите текущие показатели счетчика:" << "\n";
+	double electroPresent;
+	cin >> electroPresent;
+	cout << "Ведите предыдущие показатели счетчика:" << "\n";
+	double electroPrevious;
+	cin >> electroPrevious;
+
+	if (electroPresent < electroPrevious) {
+		cout << "Вы ввели неверные данные" << "\n";
+		main();
+	}
+	else{
+		double electroCost = 1.5;
+		cout << "Стоимость енергии: " << ((electroPresent - electroPrevious) * electroCost) << " грн" "\n";
+	}
+
+	_getch();
+}
